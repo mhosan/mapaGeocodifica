@@ -7,32 +7,28 @@ import { JsonService} from './json.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  direccion: string;
-  latLon: string;
+  title = 'app';
   constructor(private json: JsonService){
 
   }
   ngOnInit(){
- 
-  }
-  
-  geocodificar(){
-    this.json.getData("https://geocode.xyz/" + this.direccion + "?json=1").subscribe(respuesta => {
-      console.log(respuesta);
-      console.log(respuesta.latt + ", " + respuesta.longt);
-      this.latLon = respuesta.latt + ", " + respuesta.longt;
+    let i = 100;
+    this.json.getData("https://jsonplaceholder.typicode.com/comments").subscribe(respuesta => {
+        console.log(respuesta);
+        //console.log(respuesta.latt + ", " + respuesta.longt);
+        //console.log(respuesta[i].title + ", " + respuesta[i].year + ", " + respuesta[i].director + ", " + respuesta[i].cast + ", " + respuesta[i].genre);
     });
   }
-
 }
-//Geocodificacion desde la api de la pagina https://geocode.xyz/api. Es gratis para un limite de velocidad de hasta 1 llamada API por segundo.
+//https://api.github.com/users/mhosan/repos
+//https://tgeo.arba.gov.ar/mesi/buscador/getPartidos.aspx
+//http://api.geonames.org/citiesJSON?north=44.1&south=-9.9&east=-22.4&west=55.2&lang=de&username=demo
+//https://api.github.com/users/mralexgray/repos
+
+//Geocodificacion desde la api de la pagina https://geocode.xyz/api
 //Examples: 2984 LEGUIZAMON, MARTINIANO Villa Lugano AR 
 //https://geocode.xyz/51.50354,-0.12768?geoit=json
 //https://geocode.xyz/Hauptstr.,+57632+Berzhausen?json=1
-//avda. 7 esquina 38:       -34.906542,-57.961084
-//plaza olazabal (7 y 39):  -34.90657, -57.96112 
-//7 y 45:                   -34.912036, -57.954601
-
 
 //poblacion:
 //http://api.population.io/1.0/population/World/today-and-tomorrow/?format=json

@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { JsonService } from './json.service';
-import { FormsModule} from '@angular/forms';    //se agrega para poder usar la banana en la caja: [(ngModel)]
 
 import { AppComponent } from './app.component';
 
@@ -12,8 +11,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
-    FormsModule  //agregar aqui tambien la banana en la caja
+    HttpModule
   ],
   providers: [
     JsonService
