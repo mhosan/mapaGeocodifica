@@ -5,7 +5,7 @@
   </div>
   
   <div class="input-group">
-    <input type="text" class="form-control col-md-6" id="dire" [(ngModel)]="direccion">
+    <input type="text" class="form-control col-md-6" id="dire" [(ngModel)]="direccion">   
     <!-- <label for="dire" class="col-md-3">Ingresar direcci&oacute;n</label> -->
     <span class="input-group-control">
       <button class="btn btn-info" (click)="geocodificar()">Geocodificar</button>
@@ -13,13 +13,18 @@
   </div>
   <br>
   <br>
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">
-        Coordenadas:
-      </h5>
-      <p class="card-text">{{latLon}}</p>
-      <a href= "https://maps.google.com/?q={{latLon}}&z=7" target = "_blank">Ver en Google Maps</a>
-    </div>
+  <div class="row">
+      <div class="card col-md-2">
+        <div class="card-body">
+          <h5 class="card-title">
+            Coordenadas:
+          </h5>
+          <p class="card-text">{{latLon}}</p>
+          <!-- <a href= "https://maps.google.com/?q={{latLon}}&z=7" class="btn btn-info" target = "_blank">Ver en Google Maps</a> -->
+        </div>
+      </div>
+      <div class="col-md-10">
+        <app-mapin></app-mapin>
+      </div>
   </div>
 </div>

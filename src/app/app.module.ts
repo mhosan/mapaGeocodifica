@@ -3,17 +3,19 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { JsonService } from './json.service';
 import { FormsModule} from '@angular/forms';    //se agrega para poder usar la banana en la caja: [(ngModel)]
+import { MapinComponent } from './mapin/mapin.component';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MapinComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    FormsModule  //agregar aqui tambien la banana en la caja
+    FormsModule
   ],
   providers: [
     JsonService
