@@ -14,22 +14,20 @@ import { MapinComponent } from './mapin/mapin.component';
 export class AppComponent {
   direccion: string;
   public latLon: string = "";
-  latitudLongitud : LatitudLongitud;
+  public latitudLongitud : LatitudLongitud;
   @ViewChild(MapinComponent) mapita: MapinComponent;
 
   constructor(private json: JsonService){}
   ngOnInit(){}
-  
+  //comentario
 
   geocodificar(){
     this.json.getData("https://geocode.xyz/" + this.direccion + "?json=1").subscribe(respuesta => {
       console.log(respuesta);
       console.log(respuesta.latt + ", " + respuesta.longt);
       this.latLon = respuesta.latt + ", " + respuesta.longt;
-      //this.latitudLongitud.lat = respuesta.latt;
-      //this.latitudLongitud.lon = respuesta.longt;
-      //this.mostrar(respuesta.latt, respuesta.longt);
-      this.mapita.ponerMarcador(this.latLon);      
+      this.latitudLongitud = {lat : respuesta.latt, lon : respuesta.longt}
+      this.mapita.ponerMarcador(this.latitudLongitud);      
     });
   }
 

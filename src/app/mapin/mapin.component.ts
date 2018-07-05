@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonService} from '../json.service';
+import { LatitudLongitud } from '../modelo';
  
 declare let L;
 var miMapa;
 declare let contextmenu;
-
 
 @Component({
   selector: 'app-mapin',
@@ -12,8 +12,8 @@ declare let contextmenu;
   styleUrls: ['./mapin.component.css']
 })
 export class MapinComponent implements OnInit {
-  constructor(private json: JsonService){
-
+  public latitudLongitud : LatitudLongitud;
+  constructor(private json: JsonService){ 
   }
   
   ngOnInit() {
@@ -105,9 +105,20 @@ export class MapinComponent implements OnInit {
     miMapa.zoomOut();
   }
 
-  ponerMarcador(lalo){
-    alert("Estoy en mapin " + lalo);
-  
+  ponerMarcador(objetoLatLong : LatitudLongitud){
+    //alert("Estoy en mapin, lat: " + objetoLatLong.lat + ", long: " + objetoLatLong.lon);
+    let lasCoords = [];
+    lasCoords[0] = objetoLatLong.lat;
+    lasCoords[1] = objetoLatLong.lon;
+    miMapa.setView(lasCoords, 17);
+    let marca = L.marker(lasCoords, {
+      icon: L.icon({
+        iconSize: [ 40, 31 ],
+        iconAnchor: [ 19, 31 ],
+        iconUrl: 'assets/images/marker-green.png'
+        //shadowUrl: 'assets/images/marcador01.png'
+      })
+    }).addTo(miMapa);
   }
   
 
