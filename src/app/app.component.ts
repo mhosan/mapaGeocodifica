@@ -22,6 +22,7 @@ export class AppComponent {
   //comentario
 
   geocodificar(){
+  
     //locationiq, https://locationiq.com:
     //Your Key is 7c041d46548c08
   //   this.json.getData("https://us1.locationiq.org/v1/search.php?key=7c041d46548c08&q=" + this.direccion + "&format=json").subscribe(respuesta => {

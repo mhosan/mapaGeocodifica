@@ -14,7 +14,6 @@ export class JsonService {
   public resultado: any;
 
   getData(url:string){
-    
     //return this.http.get(url).map((res: Response) => res.json());
     this.resultado = this.http.get(url).map((res: Response) => res.json());
     return this.resultado;
