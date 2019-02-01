@@ -24,23 +24,24 @@ export class AppComponent {
   geocodificar(){
   //locationiq, https://locationiq.com:
   //Your Key is 7c041d46548c08
-  //   this.json.getData("https://us1.locationiq.org/v1/search.php?key=7c041d46548c08&q=" + this.direccion + "&format=json").subscribe(respuesta => {
-  //     console.log(respuesta);
-  //     console.log(respuesta[0].lat + ", " + respuesta[0].lon);
-  //     this.latLon = respuesta[0].lat + ", " + respuesta[0].lon;
-  //     this.latitudLongitud = {lat : respuesta[0].lat, lon : respuesta[0].lon};
-  //     this.mapita.ponerMarcador(this.latitudLongitud);
-  // });
-  // this.json.getData("https://us1.locationiq.org/v1/search.php?key=7c041d46548c08&q=Empire%20State%20Building&format=json").subscribe(respuesta => {
-  //   console.log(respuesta);
-  // });
-  this.json.getData("https://geocode.xyz/" + this.direccion + "?json=1").subscribe(respuesta => {
-      console.log(respuesta);
-      console.log(respuesta.latt + ", " + respuesta.longt);
+     this.json.getData("https://us1.locationiq.org/v1/search.php?key=7c041d46548c08&q=" + this.direccion + "&format=json").subscribe(respuesta => {
+       //console.log(respuesta);
+       console.log(respuesta[0].lat + ", " + respuesta[0].lon);
+       this.latLon = respuesta[0].lat + ", " + respuesta[0].lon;
+       this.latitudLongitud = {lat : respuesta[0].lat, lon : respuesta[0].lon};
+       this.mapita.ponerMarcador(this.latitudLongitud);
+   });
+  //  this.json.getData("https://us1.locationiq.org/v1/search.php?key=7c041d46548c08&q=Empire%20State%20Building&format=json").subscribe(respuesta => {
+  //    console.log(respuesta);
+  //  });
+
+  //this.json.getData("https://geocode.xyz/" + this.direccion + "?json=1").subscribe(() => {
+      //console.log("hola mundo");
+      /*console.log(respuesta.latt + ", " + respuesta.longt);
       this.latLon = respuesta.latt + ", " + respuesta.longt;
       this.latitudLongitud = {lat : respuesta.latt, lon : respuesta.longt}
-      this.mapita.ponerMarcador(this.latitudLongitud);      
-    });
+      this.mapita.ponerMarcador(this.latitudLongitud);*/      
+    //});
   }
   mostrar(){
     alert("si");
