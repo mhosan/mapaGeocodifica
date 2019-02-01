@@ -1,9 +1,7 @@
-
 import { Component, ViewChild } from '@angular/core';
 import { JsonService} from './json.service';
 import { LatitudLongitud } from './modelo';
 import { MapinComponent } from './mapin/mapin.component';
-
 
 @Component({
   selector: 'app-root',
@@ -11,6 +9,7 @@ import { MapinComponent } from './mapin/mapin.component';
   styleUrls: ['./app.component.css'],
   
 })
+
 export class AppComponent {
   direccion: string;
   public latLon: string = "";
@@ -31,31 +30,7 @@ export class AppComponent {
        this.latitudLongitud = {lat : respuesta[0].lat, lon : respuesta[0].lon};
        this.mapita.ponerMarcador(this.latitudLongitud);
    });
-  //  this.json.getData("https://us1.locationiq.org/v1/search.php?key=7c041d46548c08&q=Empire%20State%20Building&format=json").subscribe(respuesta => {
-  //    console.log(respuesta);
-  //  });
-
-  //this.json.getData("https://geocode.xyz/" + this.direccion + "?json=1").subscribe(() => {
-      //console.log("hola mundo");
-      /*console.log(respuesta.latt + ", " + respuesta.longt);
-      this.latLon = respuesta.latt + ", " + respuesta.longt;
-      this.latitudLongitud = {lat : respuesta.latt, lon : respuesta.longt}
-      this.mapita.ponerMarcador(this.latitudLongitud);*/      
-    //});
   }
-  mostrar(){
-    alert("si");
-  //   alert(lati + "," + longi);
-  //   // let marcador = L.marker([ -34.921136, -57.954712 ], {
-  //   //   icon: L.icon({
-  //   //     iconSize: [ 40, 31 ],
-  //   //     iconAnchor: [ 19, 31 ],
-  //   //     iconUrl: 'assets/images/marker-green.png'
-  //   //     //shadowUrl: 'assets/images/marcador01.png'
-  //   //   })
-  //   // }).addTo(miMapa);
-  // }
-}
 }
 //Geocodificacion desde la api de la pagina https://geocode.xyz/api. Es gratis para un limite de velocidad de hasta 1 llamada API por segundo.
 //Examples: 2984 LEGUIZAMON, MARTINIANO Villa Lugano AR 

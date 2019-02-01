@@ -1,20 +1,12 @@
 <div class="container">
- 
-    <h1 class="display-5">Geocodificación Angulosa</h1>
-<<<<<<< HEAD
-    <p class="lead">Esto es una prueba con Angular de una llamada http get utilizando Observables y viva la patria</p>
-  </div>
-=======
-    <p class="lead">Esto es una prueba con Angular de una llamada http get utilizando Observables</p>
-    <p class="lead">Usar como ejemplo "calle 119, 323, la plata, argentina"</p>
- 
->>>>>>> otroGeolocalizador
+  <h1 class="display-5">Geocodificación Angulosa</h1>
+  <p class="lead">Esto es una prueba con Angular de una llamada http get utilizando Observables</p>
+  <p class="lead">Usar como ejemplo "calle 119, 323, la plata, argentina"</p>
   
   <div class="row">
   <div class="col">
     <div class="input-group">
     <input type="text" class="form-control col-md-6" id="dire" [(ngModel)]="direccion" placeholder="Calle nro, ciudad, pais">   
-    <!-- <label for="dire" class="col-md-3">Ingresar direcci&oacute;n</label> -->
     <span class="input-group-control">
       <button class="btn btn-info" (click)="geocodificar()">Geocodificar</button>
     </span>
@@ -27,18 +19,15 @@
           Coordenadas a buscar:
         </h5>
         <p class="card-text">{{latLon}}</p>
-        <!-- <a href= "https://maps.google.com/?q={{latLon}}&z=7" class="btn btn-info" target = "_blank">Ver en Google Maps</a> -->
       </div>
     </div>
   </div>
 </div>
   <br>
   <br>
-  
   <div class="row">
       <div class="col">
         <app-mapin></app-mapin>
       </div>
   </div>
-
 </div>
