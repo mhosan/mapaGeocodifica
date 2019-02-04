@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { JsonService} from '../json.service';
 import { LatitudLongitud } from '../modelo';
  
 declare let L;
@@ -13,8 +12,9 @@ declare let contextmenu;
 })
 export class MapinComponent implements OnInit {
   public latitudLongitud : LatitudLongitud;
-  constructor(private json: JsonService){ 
-  }
+
+  constructor () {}
+
   ngOnInit() {
     //var miMapa = L.map('map').setView([ -34.921136, -57.954712], 13);
     let osm1 = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
